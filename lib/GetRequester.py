@@ -16,7 +16,7 @@ class GetRequester:
         return json_data
 
 # Example usage:
-url = "https://jsonplaceholder.typicode.com/todos/1"
+url = "https://learn-co-curriculum.github.io/json-site-example/endpoints/people.json"
 requester = GetRequester(url)
 response_body = requester.get_response_body()
 print("Response Body:", response_body)
