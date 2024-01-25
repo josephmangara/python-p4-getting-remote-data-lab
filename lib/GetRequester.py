@@ -7,7 +7,19 @@ class GetRequester:
         self.url = url
 
     def get_response_body(self):
-        pass
+        response = requests.get(self.url)
+        return response.content
 
     def load_json(self):
-        pass
+        response_body = self.get_response_body()
+        json_data = json.loads(response_body)
+        return json_data
+
+# Example usage:
+url = "https://jsonplaceholder.typicode.com/todos/1"
+requester = GetRequester(url)
+response_body = requester.get_response_body()
+print("Response Body:", response_body)
+
+json_data = requester.load_json()
+print("JSON Data:", json_data)
